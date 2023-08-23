@@ -1,1 +1,46 @@
+@use "@angular/material" as mat;
+
+@include mat.core();
+$bus-ticket-booking-frontend-primary: mat.define-palette(mat.$indigo-palette);
+$bus-ticket-booking-frontend-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+$bus-ticket-booking-frontend-warn: mat.define-palette(mat.$red-palette);
+$bus-ticket-booking-frontend-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $bus-ticket-booking-frontend-primary,
+      accent: $bus-ticket-booking-frontend-accent,
+      warn: $bus-ticket-booking-frontend-warn,
+    ),
+  )
+);
+@include mat.all-component-themes($bus-ticket-booking-frontend-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Inter Tight";
+  src: url("./assets/fonts/InterTight-Medium.woff2") format("woff2");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  border: 0 solid #e5e7eb;
+}
+
+*,
+body {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
