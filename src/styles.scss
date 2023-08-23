@@ -44,3 +44,21 @@ body {
   line-height: 1.5;
   font-weight: 400;
 }
+img,
+video {
+  max-width: 100%;
+}
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+img {
+  border-style: none;
+}

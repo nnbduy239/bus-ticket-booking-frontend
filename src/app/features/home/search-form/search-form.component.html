@@ -1,0 +1,64 @@
+<section class="home-search-container">
+  <div class="home-search">
+    <form class="search-form">
+      <div class="search-form-header">
+        <fieldset class="route-type-radio-container">
+          <input type="radio" id="oneWay" name="routeType">
+          <label class="route-type-label" for="oneWay">Một chiều</label>
+          <input type="radio" id="roundTrip" name="routeType">
+          <label class="route-type-label" for="roundTrip">Khứ hồi</label>
+        </fieldset>
+      </div>
+      <div class="search-form-body">
+        <div class="locations">
+          <div class="starting-point">
+            <label>Điểm đến</label>
+            <div>
+              <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+                [matAutocomplete]="auto" class="input-search">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </div>
+          </div>
+          <img src="/assets/images/switch_location.svg" alt="switch location icon" class="switch-location">
+          <div class="starting-point">
+            <label>Điểm đến</label>
+            <div>
+              <input class="input-search" type="text" placeholder="Pick one" aria-label="Number" matInput
+                [formControl]="myControl" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </div>
+          </div>
+        </div>
+        <div class="locations">
+          <div class="date-tickets">
+            <label>Ngày đi</label>
+            <div>
+              <input type="date" class="input-search">
+            </div>
+          </div>
+          <div class="date-tickets">
+            <label>Số vé</label>
+            <div>
+              <mat-select class="input-search">
+                <mat-option *ngFor="let ticket of tickets" [value]="ticket">
+                  {{ticket}}
+                </mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="find-route-container">
+        <button class="find-route">Tìm chuyến xe</button>
+      </div>
+    </form>
+  </div>
+</section>
