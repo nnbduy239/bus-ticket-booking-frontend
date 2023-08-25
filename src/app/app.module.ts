@@ -8,6 +8,7 @@ import { HomeComponent } from './features/home/home.component';
 import { SearchFormComponent } from './features/home/search-form/search-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
+import { SearchResultComponent } from './features/home/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MaterialModule } from './shared/material/material.module';
     HeaderComponent,
     HomeComponent,
     SearchFormComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,

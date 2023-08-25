@@ -3,7 +3,6 @@
   flex-direction: column;
   padding-top: 10rem;
   position: relative;
-  max-width: 1128px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -96,19 +95,29 @@ input[type="radio"]:checked + label::after {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
-.locations {
+.locations-input-container {
   display: flex;
   justify-content: center;
   position: relative;
   gap: 1rem;
 }
-.starting-point {
+.location-input {
   flex: 1 1 0%;
 }
-.date-tickets {
+.date-ticket-input-container {
   display: flex;
+}
+.date-input {
   flex: 1 1 0%;
   flex-direction: column;
+  margin-right: 1em;
+}
+.ticket-input {
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+.mat-mdc-select-value {
+  font-size: 1.5 !important;
 }
 /* end search form body style */
 .input-search {
@@ -119,7 +128,18 @@ input[type="radio"]:checked + label::after {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 5px;
-  width: 216px;
+  width: calc(100% - 2.5rem);
+}
+.quantity {
+  border: 1px solid #dde2e8;
+  border-radius: 8px;
+  background-color: white;
+  margin-top: 5px;
+  padding: 12px 20px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  height: 66.6px;
+  width: calc(100% - 1rem);
 }
 .switch-location {
   position: absolute;

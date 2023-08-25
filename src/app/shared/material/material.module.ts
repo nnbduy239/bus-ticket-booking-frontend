@@ -16,7 +16,7 @@ const MaterialComponents = [
   MatNativeDateModule,
 ];
 @NgModule({
-  imports: [MaterialComponents],
-  exports: [MaterialComponents],
+  imports: [...MaterialComponents],
+  exports: [...MaterialComponents],
 })
 export class MaterialModule {}

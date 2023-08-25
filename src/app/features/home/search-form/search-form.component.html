@@ -3,15 +3,15 @@
     <form class="search-form">
       <div class="search-form-header">
         <fieldset class="route-type-radio-container">
-          <input type="radio" id="oneWay" name="routeType">
+          <input type="radio" id="oneWay" name="routeType" checked>
           <label class="route-type-label" for="oneWay">Một chiều</label>
           <input type="radio" id="roundTrip" name="routeType">
           <label class="route-type-label" for="roundTrip">Khứ hồi</label>
         </fieldset>
       </div>
       <div class="search-form-body">
-        <div class="locations">
-          <div class="starting-point">
+        <div class="locations-input-container">
+          <div class="location-input">
             <label>Điểm đến</label>
             <div>
               <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
@@ -24,7 +24,7 @@
             </div>
           </div>
           <img src="/assets/images/switch_location.svg" alt="switch location icon" class="switch-location">
-          <div class="starting-point">
+          <div class="location-input">
             <label>Điểm đến</label>
             <div>
               <input class="input-search" type="text" placeholder="Pick one" aria-label="Number" matInput
@@ -37,21 +37,25 @@
             </div>
           </div>
         </div>
-        <div class="locations">
-          <div class="date-tickets">
+        <div class="date-ticket-input-container">
+          <div class="date-input">
             <label>Ngày đi</label>
             <div>
-              <input type="date" class="input-search">
+              <input matInput #input [matDatepicker]="picker" (focus)="picker.open()" class=" input-search" readonly>
+              <mat-datepicker #picker (closed)="input.blur()"></mat-datepicker>
             </div>
           </div>
-          <div class="date-tickets">
+          <div class="ticket-input">
             <label>Số vé</label>
             <div>
-              <mat-select class="input-search">
+              <select class="quantity">
+                <option *ngFor="let ticket of tickets" [value]="ticket">{{ticket}}</option>
+              </select>
+              <!-- <mat-select class="input-search">
                 <mat-option *ngFor="let ticket of tickets" [value]="ticket">
                   {{ticket}}
                 </mat-option>
-              </mat-select>
+              </mat-select> -->
             </div>
           </div>
         </div>
