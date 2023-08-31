@@ -9,6 +9,7 @@ import { SearchFormComponent } from './features/home/search-form/search-form.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { SearchResultComponent } from './features/home/search-result/search-result.component';
+import { RoutePreviewComponent } from './features/home/search-result/route-preview/route-preview.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SearchResultComponent } from './features/home/search-result/search-resu
     HomeComponent,
     SearchFormComponent,
     SearchResultComponent,
+    RoutePreviewComponent,
   ],
   imports: [
     BrowserModule,

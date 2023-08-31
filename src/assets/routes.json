@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "BusName": "futabus",
+    "DepartureTime": "10:00 AM",
+    "Source": "Đà Lạt",
+    "startingPoint": "Bến xe Đà Lạt",
+    "destinationStation": "BX Miền Đông Mới",
+    "Destination": "Tp.Hồ Chí Minh",
+    "Fare": 280000,
+    "CoachType": "Limousine",
+    "SeatsAvailable": 36,
+    "bookings": {}
+  },
+  {
+    "id": 2,
+    "BusName": "futabus",
+    "DepartureTime": "10:00 AM",
+    "Source": "Đà Lạt",
+    "startingPoint": "Bến xe đà lạt",
+    "destinationStation": "Bến Xe Miền Tây",
+    "Destination": "Tp.Hồ Chí Minh",
+    "Fare": 280000,
+    "CoachType": "Bunk",
+    "SeatsAvailable": 34,
+    "bookings": {}
+  },
+  {
+    "id": 2,
+    "BusName": "futabus",
+    "DepartureTime": "10:00 AM",
+    "Source": "Đà Lạt",
+    "startingPoint": "Bến xe đà lạt",
+    "destinationStation": "Bến Xe Miền Tây",
+    "Destination": "Tp.Hồ Chí Minh",
+    "Fare": 280000,
+    "CoachType": "Bunk",
+    "SeatsAvailable": 2,
+    "bookings": {}
+  },
+  {
+    "id": 2,
+    "BusName": "futabus",
+    "DepartureTime": "10:00 AM",
+    "Source": "Tp.Hồ Chí Minh",
+    "startingPoint": "BX Miền Đông Mới",
+    "destinationStation": "Bến xe Đà Lạt",
+    "Destination": "Đà Lạt",
+    "Fare": 280000,
+    "CoachType": "Bunk",
+    "SeatsAvailable": 34,
+    "bookings": {}
+  }
+]

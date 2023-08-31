@@ -1,24 +1,24 @@
 <section class="home-search-container">
   <div class="home-search">
-    <form class="search-form">
+    <form class="search-form" [formGroup]="journeyInfo" (ngSubmit)="onSubmit()">
       <div class="search-form-header">
         <fieldset class="route-type-radio-container">
           <input type="radio" id="oneWay" name="routeType" checked>
           <label class="route-type-label" for="oneWay">Một chiều</label>
           <input type="radio" id="roundTrip" name="routeType">
-          <label class="route-type-label" for="roundTrip">Khứ hồi</label>
+          <label class=" route-type-label" for="roundTrip">Khứ hồi</label>
         </fieldset>
       </div>
       <div class="search-form-body">
         <div class="locations-input-container">
           <div class="location-input">
-            <label>Điểm đến</label>
+            <label>Điểm đi</label>
             <div>
-              <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
-                [matAutocomplete]="auto" class="input-search">
+              <input type="text" placeholder="Chọn điểm đi" matInput [matAutocomplete]="auto" class="input-search"
+                formControlName="sourceLocation">
               <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of options" [value]="option">
-                  {{option}}
+                <mat-option *ngFor="let city of sourceCities" [value]="city">
+                  {{city}}
                 </mat-option>
               </mat-autocomplete>
             </div>
@@ -27,11 +27,11 @@
           <div class="location-input">
             <label>Điểm đến</label>
             <div>
-              <input class="input-search" type="text" placeholder="Pick one" aria-label="Number" matInput
-                [formControl]="myControl" [matAutocomplete]="auto">
+              <input class="input-search" type="text" placeholder="Chọn điểm đến" matInput [matAutocomplete]="auto"
+                formControlName="destination">
               <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of options" [value]="option">
-                  {{option}}
+                <mat-option *ngFor="let city of destinationCities" [value]="city">
+                  {{city}}
                 </mat-option>
               </mat-autocomplete>
             </div>
@@ -41,27 +41,30 @@
           <div class="date-input">
             <label>Ngày đi</label>
             <div>
-              <input matInput #input [matDatepicker]="picker" (focus)="picker.open()" class=" input-search" readonly>
+              <input matInput #input [matDatepicker]="picker" (focus)="picker.open()" class=" input-search" readonly
+                formControlName="departureDate" placeholder="{{currentDate | date:'dd-MM-yyyy'}}">
               <mat-datepicker #picker (closed)="input.blur()"></mat-datepicker>
+            </div>
+          </div>
+          <div class="date-input" *ngIf="visible">
+            <label>Ngày về</label>
+            <div>
+              <input matInput #input1 [matDatepicker]="picker2" (focus)="picker2.open()" class=" input-search" readonly>
+              <mat-datepicker #picker2 (closed)="input1.blur()"></mat-datepicker>
             </div>
           </div>
           <div class="ticket-input">
             <label>Số vé</label>
             <div>
-              <select class="quantity">
+              <select class="quantity" formControlName="numberOfSeats" [(ngModel)]="DEFAULT_SELECT_VALUE">
                 <option *ngFor="let ticket of tickets" [value]="ticket">{{ticket}}</option>
               </select>
-              <!-- <mat-select class="input-search">
-                <mat-option *ngFor="let ticket of tickets" [value]="ticket">
-                  {{ticket}}
-                </mat-option>
-              </mat-select> -->
             </div>
           </div>
         </div>
       </div>
       <div class="find-route-container">
-        <button class="find-route">Tìm chuyến xe</button>
+        <button type="submit" class="find-route">Tìm chuyến xe</button>
       </div>
     </form>
   </div>

@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="result-container">
-    <div class="title">Đà lạt - TP.Hồ Chí Minh (14)</div>
-    <div bu class="result-filter-container">
+    <div class="title">{{journeyInfo.sourceLocation}} - {{journeyInfo.destination}} ({{resultsCount}})</div>
+    <div bu class="result-filter-container" *ngIf="availableBuses?.length">
       <div class="result-filter active">
         <img src="/assets/images/save_money.svg" alt="">
         Giá rẻ bất ngờ
@@ -20,6 +20,8 @@
         Ghế trống
       </div>
     </div>
-    <app-route-list></app-route-list>
+    <div class="list-route">
+      <app-route-preview *ngFor="let bus of availableBuses" [journey]="bus"></app-route-preview>
+    </div>
   </div>
 </div>

@@ -15,12 +15,12 @@
   </div>
   <div class="station">
     <div style="flex: 1 1 0%;">
-      <span class="station-name">Bến xe đà lạt</span>
+      <span class="station-name">{{journey.startingPoint}}</span>
       <br>
       <span style="color: #637280; margin-top: .5rem;"></span>
     </div>
     <div style="flex: 1 1 0%; text-align:right;">
-      <span class="station-name">BX Miền Đông Mới</span>
+      <span class="station-name">{{journey.destinationStation}}</span>
       <br>
       <span style="color: #637280; margin-top: .5rem;"></span>
     </div>
@@ -28,11 +28,11 @@
   <div class="divine"></div>
   <div class="route-infor-footer">
     <div class="bus-infor">
-      <span class="text-orange">280.000đ</span>
+      <span class="text-orange">{{journey.Fare | currency:'VND'}}</span>
       <div class="dot"></div>
-      <span>Limousine</span>
+      <span class="bus-type">{{journey.CoachType}}</span>
       <div class="dot"></div>
-      <span class="text-orange">16 chỗ trống</span>
+      <span class="text-orange">{{journey.SeatsAvailable}} chỗ trống</span>
       <span class="choose-seat">Chọn ghế</span>
     </div>
     <button class="choose-route"><span>Chọn tuyến</span></button>
