@@ -1,0 +1,99 @@
+.container {
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  padding-top: 0.25rem;
+  padding-top: 0.25rem;
+  flex-direction: column;
+  max-width: 42rem;
+  display: flex;
+}
+.header {
+  font-weight: 400;
+  justify-content: space-between;
+  display: flex;
+}
+.status {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+}
+.icon {
+  border-radius: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+}
+.sold-icon {
+  background-color: rgba(213, 217, 221, 1);
+  border-color: rgba(192, 198, 204, 1);
+}
+.avalable-icon {
+  background-color: rgba(222, 243, 255, 1);
+  border-color: rgba(150, 197, 231, 1);
+}
+.choose-icon {
+  background-color: rgba(253, 237, 232, 1);
+  border-color: rgba(248, 190, 171, 1);
+}
+.divine {
+  width: 100%;
+  background: rgba(0, 0, 0, 1);
+  height: 0.5px;
+  margin-bottom: 1rem;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ticket-seat {
+  color: rgba(74, 74, 74, 1);
+  font-size: 13px;
+}
+.seat-name {
+  color: rgba(74, 74, 74, 1);
+  font-size: 14px;
+}
+.price {
+  color: rgba(239, 82, 34, 1);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.buy-ticket-btn {
+  background-color: #ef5222 !important;
+  color: #fff;
+  border: 1px solid #ef5222 !important;
+  padding: 0 20px;
+  margin-top: 1.25rem !important;
+  height: 32px;
+  font-size: 14px;
+  border-radius: 32px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  line-height: 1.5715;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+}
+.body {
+  font-weight: 500;
+  text-align: center;
+  gap: 1.5rem;
+  justify-content: center;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

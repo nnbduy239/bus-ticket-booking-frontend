@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header">
+    <span class="status">
+      <div class=" icon sold-icon">
+      </div>
+      Đã bán
+    </span>
+    <span class="status">
+      <div class="icon avalable-icon">
+      </div>
+      Còn trống
+    </span>
+    <span class="status">
+      <div class="icon choose-icon">
+      </div>
+      Đang chọn
+    </span>
+  </div>
+  <app-seat-map class="body" (cartData)="receivedSelectSeat($event)"></app-seat-map>
+  <div class="divine"></div>
+  <div class="footer" *ngIf="cart">
+    <span class="ticket-seat">
+      {{cart.selectedSeats.length}} vé <br>
+      <span class="seat-name">{{cart.selectedSeats.toString()}}</span>
+    </span>
+    <span class="price">{{cart.totalAmount | currency:'VND'}}</span>
+  </div>
+  <button class="buy-ticket-btn" (click)="buyTicket()">Mua vé</button>
+  <div style="margin-bottom: 1rem;"></div>
+</div>

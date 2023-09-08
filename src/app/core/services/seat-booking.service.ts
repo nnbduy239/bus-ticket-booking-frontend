@@ -1,33 +1,31 @@
 import { Injectable } from '@angular/core';
 import * as data from '../../../assets/routes.json';
-import { Journey } from '../models/journey.model';
+import { Trip } from '../models/trip.model';
 @Injectable({
   providedIn: 'root',
 })
 export class SeatBookingService {
-  journey: any;
-  buses: Journey[] = (data as any).default;
+  trip: any;
+  buses: Trip[] = (data as any).default;
   localJourney: any = JSON.parse(localStorage.getItem('searchInput')!);
   constructor() {}
   getFilteredBuses() {
-    if (this.journey) {
+    if (this.trip) {
       return this.buses.filter((bus) => {
         return (
-          bus.Destination === this.journey.destination &&
-          bus.Source === this.journey.sourceLocation &&
-          bus.SeatsAvailable >= +this.journey.numberOfSeats
+          bus.Destination === this.trip.destination &&
+          bus.Source === this.trip.sourceLocation &&
+          bus.SeatsAvailable >= +this.trip.numberOfSeats
         );
       });
     } else return undefined;
   }
-  getJourneyObject() {
-    // const localJourney = JSON.parse(localStorage.getItem('searchInput')!);
-    return this.journey;
+  getTripObject() {
+    return this.trip;
   }
 
-  setJourneyEndpoints(journey: any) {
-    this.journey = journey;
-    localStorage.setItem('searchInput', JSON.stringify(journey));
+  setTripEndpoints(trip: any) {
+    this.trip = trip;
   }
 
   getSourceCities() {

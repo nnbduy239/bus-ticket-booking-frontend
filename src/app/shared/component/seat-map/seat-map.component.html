@@ -1,0 +1,26 @@
+<ng-container *ngFor="let floor of seatmap">
+  <div class="floor">
+    <span class="floor-name">{{floor.floor_name}}</span>
+    <table>
+      <tbody>
+        <tr class="seat-row" *ngFor="let row of floor.rows;">
+          <ng-container *ngFor="let seat of row.seats; ">
+            <td class="aside" *ngIf="seat.seat_number === ''"></td>
+            <td
+              [ngClass]="{'seat-item':true, 'seat-available': seat.status ==='available','seat-booked' : seat.status === 'booked', 'seat-unavailable' : seat.status === 'unavailable'}"
+              (click)="selectSeat(seat)"
+              *ngIf="(seat.status == 'available' || seat.status == 'booked')&& seat.seat_number !== ''">
+              <span class="image-icon"></span>
+              <span class="name">{{seat.seat_number}}</span>
+            </td>
+            <td [ngClass]="{'seat-item':true, 'seat-unavailable' :true}"
+              *ngIf="seat.status == 'unavailable' && seat.seat_number !== ''">
+              <span class="image-icon"></span>
+              <span class="name">{{seat.seat_number}}</span>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-container>

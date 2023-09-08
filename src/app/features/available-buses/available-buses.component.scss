@@ -1,30 +1,3 @@
-.search-result-container {
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 640px) {
-    gap: 1.5rem;
-    flex-direction: row;
-    padding-top: 1.5rem;
-  }
-}
-.search-filter-container {
-  display: block;
-}
-.search-filter {
-  display: flex;
-  stroke: #ebedee;
-  min-width: 360px;
-  width: 360px;
-  background-color: rgba(248, 249, 249, 1);
-  @media (min-width: 640px) {
-    border-radius: 0.75rem;
-  }
-}
-.result-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
 .title {
   display: block;
   font-size: 1.25rem !important;

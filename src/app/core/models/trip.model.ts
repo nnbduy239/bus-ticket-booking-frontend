@@ -1,4 +1,4 @@
-export interface Journey {
+export interface Trip {
   id: number;
   BusName: string;
   DepartureTime: string;

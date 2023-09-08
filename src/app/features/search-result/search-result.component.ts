@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SeatBookingService } from '../../../core/services/seat-booking.service';
-import { Journey } from '../../../core/models/journey.model';
+import { SeatBookingService } from '../../core/services/seat-booking.service';
+import { Trip } from '../../core/models/trip.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,18 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchResultComponent implements OnInit {
   resultsCount: any;
-  journeyInfo: any;
-  availableBuses: Journey[] | undefined = undefined;
+  tripInfo: any;
+  availableBuses: Trip[] | undefined = undefined;
   constructor(
     private bookingService: SeatBookingService,
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((param) => {
-      this.journeyInfo = this.bookingService.getJourneyObject();
+      this.tripInfo = this.bookingService.getTripObject();
       this.availableBuses = this.bookingService.getFilteredBuses();
       this.resultsCount = this.availableBuses?.length;
-      console.log(this.journeyInfo);
+      console.log(this.tripInfo);
     });
   }
 }

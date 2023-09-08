@@ -1,0 +1,18 @@
+<div class="title">{{trip.sourceLocation}} - {{trip.destination}} ({{buses?.length}})</div>
+<div bu class="result-filter-container" *ngIf="buses.length">
+  <div class="result-filter active">
+    <img src="/assets/images/save_money.svg" alt="">
+    Giá rẻ bất ngờ
+  </div>
+  <div class="result-filter">
+    <img src="/assets/images/clock.svg" alt="">
+    Giờ khởi hành
+  </div>
+  <div class="result-filter">
+    <img src="/assets/images/seat.svg" alt="">
+    Ghế trống
+  </div>
+</div>
+<div class="list-route">
+  <app-trip-preview *ngFor="let bus of buses" [trip]="bus"></app-trip-preview>
+</div>

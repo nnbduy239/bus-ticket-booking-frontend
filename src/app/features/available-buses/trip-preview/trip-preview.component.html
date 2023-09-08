@@ -15,12 +15,12 @@
   </div>
   <div class="station">
     <div style="flex: 1 1 0%;">
-      <span class="station-name">{{journey.startingPoint}}</span>
+      <span class="station-name">{{trip.startingPoint}}</span>
       <br>
       <span style="color: #637280; margin-top: .5rem;"></span>
     </div>
     <div style="flex: 1 1 0%; text-align:right;">
-      <span class="station-name">{{journey.destinationStation}}</span>
+      <span class="station-name">{{trip.destinationStation}}</span>
       <br>
       <span style="color: #637280; margin-top: .5rem;"></span>
     </div>
@@ -28,13 +28,17 @@
   <div class="divine"></div>
   <div class="route-infor-footer">
     <div class="bus-infor">
-      <span class="text-orange">{{journey.Fare | currency:'VND'}}</span>
+      <span class="text-orange">{{trip.Fare | currency:'VND'}}</span>
       <div class="dot"></div>
-      <span class="bus-type">{{journey.CoachType}}</span>
+      <span class="bus-type">{{trip.CoachType}}</span>
       <div class="dot"></div>
-      <span class="text-orange">{{journey.SeatsAvailable}} chỗ trống</span>
-      <span class="choose-seat">Chọn ghế</span>
+      <span class="text-orange">{{trip.SeatsAvailable}} chỗ trống</span>
+      <span mat-button [matMenuTriggerFor]="menu" class="choose-seat">Chọn ghế</span>
     </div>
     <button class="choose-route"><span>Chọn tuyến</span></button>
+    <mat-menu #menu="matMenu">
+      <app-seat-selection (click)="$event.stopPropagation()"></app-seat-selection>
+
+    </mat-menu>
   </div>
 </div>

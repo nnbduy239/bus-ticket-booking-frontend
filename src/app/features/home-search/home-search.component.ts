@@ -6,15 +6,14 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { SeatBookingService } from '../../../core/services/seat-booking.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { tap } from 'rxjs';
+import { SeatBookingService } from '../../core/services/seat-booking.service';
+import { Router } from '@angular/router';
 @Component({
-  selector: 'app-search-form',
-  templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.scss'],
+  selector: 'app-home-search',
+  templateUrl: './home-search.component.html',
+  styleUrls: ['./home-search.component.scss'],
 })
-export class SearchFormComponent {
+export class HomeSearchComponent {
   journeyInfo: FormGroup = this.formBuilder.group({});
   submitted: boolean = false;
   sourceCities: string[] = [];
@@ -31,7 +30,6 @@ export class SearchFormComponent {
   ngOnInit(): void {
     this.sourceCities = this.bookingService.getSourceCities();
     this.destinationCities = this.bookingService.getDestinationCities();
-    const localJourney = JSON.parse(localStorage.getItem('searchInput')!);
     this.journeyInfo = this.formBuilder.group(
       {
         sourceLocation: ['', Validators.required],
@@ -43,12 +41,6 @@ export class SearchFormComponent {
         validators: [this.validDate('departureDate')],
       } as AbstractControlOptions
     );
-    this.journeyInfo.valueChanges.subscribe((value) => {
-      localStorage.setItem(
-        'searchInput',
-        JSON.stringify(this.journeyInfo.value)
-      );
-    });
   }
   get formControl() {
     return this.journeyInfo.controls;
@@ -57,16 +49,8 @@ export class SearchFormComponent {
   onSubmit() {
     this.submitted = true;
     if (this.journeyInfo.invalid) return;
-    this.bookingService.setJourneyEndpoints(this.journeyInfo.value);
-    this.router.navigate(['dat-ve'], {
-      queryParams: {
-        from: this.journeyInfo.value.sourceLocation,
-        to: this.journeyInfo.value.destination,
-        fromTime: this.journeyInfo.value.departureDate,
-        ticketCount: this.journeyInfo.value.numberOfSeats,
-      },
-      queryParamsHandling: 'merge',
-    });
+    this.bookingService.setTripEndpoints(this.journeyInfo.value);
+    this.router.navigate(['dat-ve']);
   }
 
   validDate(date: string) {

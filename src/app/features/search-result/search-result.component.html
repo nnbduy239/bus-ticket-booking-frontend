@@ -1,0 +1,5 @@
+<div class="search-result-container">
+  <app-search-filter class="aside"></app-search-filter>
+  <app-available-buses class="list-bus-container" *ngIf="tripInfo" [buses]="availableBuses"
+    [trip]="tripInfo"></app-available-buses>
+</div>

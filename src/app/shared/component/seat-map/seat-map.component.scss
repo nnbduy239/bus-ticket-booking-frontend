@@ -1,0 +1,59 @@
+.floor {
+  display: flex;
+  flex-direction: column;
+}
+.floor-name {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+.seat-row {
+  gap: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seat-item {
+  text-align: center;
+  justify-content: center;
+  cursor: not-allowed !important;
+  display: flex;
+  margin-top: 0.25rem;
+  position: relative;
+}
+.name {
+  font-size: 10px;
+  margin-top: 6px;
+  position: absolute;
+  font-weight: 600;
+  color: rgba(51, 154, 244, 1);
+}
+.aside {
+  gap: 0.25rem;
+  width: 2rem;
+  position: relative;
+}
+.image-icon {
+  width: 32px;
+  height: 32px;
+}
+.seat-available {
+  .image-icon:before {
+    content: url(../../../../assets/images/seat_active.svg);
+  }
+}
+.seat-booked {
+  .image-icon {
+    content: url(../../../../assets/images/seat_selecting.svg);
+  }
+}
+.seat-unavailable {
+  .image-icon:before {
+    content: url(../../../../assets/images/seat_disabled.svg);
+  }
+  pointer-events: none;
+}
